@@ -1,4 +1,6 @@
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { Link } from "wouter";
+import profileImage from "../assets/Formal1.jpeg";
 
 const Hero = () => {
   return (
@@ -12,18 +14,18 @@ const Hero = () => {
             Computer Science Engineering student passionate about Data Science, Machine Learning, and Software Development.
           </p>
           <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-            <a 
-              href="#contact" 
+            <Link 
+              href="/contact" 
               className="bg-green-400 hover:bg-green-500 text-white px-6 py-3 rounded-full font-medium transition-colors"
             >
               Contact Me
-            </a>
-            <a 
-              href="#projects" 
+            </Link>
+            <Link 
+              href="/projects" 
               className="bg-white hover:bg-gray-100 text-primary px-6 py-3 rounded-full font-medium transition-colors"
             >
               View Projects
-            </a>
+            </Link>
           </div>
           <div className="flex mt-8 gap-4 justify-center md:justify-start">
             <a 
@@ -56,8 +58,8 @@ const Hero = () => {
         <div className="md:w-1/3 mb-8 md:mb-0 flex justify-center animate-fade-in-up">
           <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-white shadow-lg">
             <img 
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" 
-              alt="Profile image placeholder" 
+              src={profileImage} 
+              alt="Diwakar Sharma" 
               className="w-full h-full object-cover"
             />
           </div>
