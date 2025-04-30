@@ -7,7 +7,8 @@ const Education = () => {
       degree: "Bachelor of Technology",
       field: "Computer Science and Engineering",
       period: "Aug 2022 - Present",
-      grade: "CGPA: 7.04"
+      grade: "CGPA: 7.04",
+      showGrade: true
     },
     {
       id: 2,
@@ -16,7 +17,7 @@ const Education = () => {
       degree: "Intermediate",
       field: "PCM",
       period: "Apr 2020 - Mar 2022",
-      grade: "Percentage: 70%"
+      showGrade: false
     },
     {
       id: 3,
@@ -25,7 +26,7 @@ const Education = () => {
       degree: "Matriculation",
       field: "",
       period: "Apr 2018 - Mar 2020",
-      grade: "Percentage: 71%"
+      showGrade: false
     }
   ];
 
@@ -54,7 +55,9 @@ const Education = () => {
                 <p className="text-gray-700 mb-2">{edu.location}</p>
                 <p className="font-medium">{edu.degree}</p>
                 {edu.field && <p>{edu.field}</p>}
-                <p className="mt-2 inline-block bg-gray-100 px-3 py-1 rounded-full text-sm">{edu.grade}</p>
+                {edu.showGrade && (
+                  <p className="mt-2 inline-block bg-gray-100 px-3 py-1 rounded-full text-sm">{edu.grade}</p>
+                )}
               </div>
             </div>
           ))}

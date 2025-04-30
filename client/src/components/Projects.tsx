@@ -1,14 +1,15 @@
-import { FaChevronRight } from "react-icons/fa";
+import { FaChevronRight, FaGithub } from "react-icons/fa";
 
 const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Heart Disease Detection",
+      title: "Heart Disease Prediction",
       date: "Feb 2025",
       description: "A predictive model using Logistic Regression to assess heart disease risk with an interactive Flask interface.",
       techs: ["Python", "HTML5", "CSS", "Flask"],
-      image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+      image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      github: "https://github.com/diwakar7sharma/Heart-Disease-Prediction"
     },
     {
       id: 2,
@@ -16,7 +17,8 @@ const Projects = () => {
       date: "Jul 2024",
       description: "A C++ implementation of Binary Search Tree with optimized data structures and algorithms.",
       techs: ["C++", "PowerShell", "Data Structures"],
-      image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+      image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      github: "https://github.com/diwakar7sharma/BST"
     },
     {
       id: 3,
@@ -24,7 +26,8 @@ const Projects = () => {
       date: "May 2024",
       description: "An interactive sales dashboard using R with dynamic charts and filters for data-driven decision making.",
       techs: ["R", "CSS", "Data Visualization"],
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+      github: "https://github.com/diwakar7sharma/Amazon-R-dashboard"
     }
   ];
 
@@ -72,14 +75,27 @@ const Projects = () => {
                   ))}
                 </div>
                 
-                <div className="pt-4 border-t border-gray-100 flex justify-end">
-                  <button 
+                <div className="pt-4 border-t border-gray-100 flex justify-between">
+                  <a 
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-700 hover:text-primary flex items-center gap-1 text-sm"
+                    aria-label={`View GitHub repository for ${project.title}`}
+                  >
+                    <FaGithub className="text-lg" />
+                    GitHub
+                  </a>
+                  <a 
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-primary hover:text-primary/80 font-medium flex items-center gap-1 text-sm"
                     aria-label={`View details for ${project.title}`}
                   >
-                    View Details
+                    View Project
                     <FaChevronRight className="text-xs" />
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>

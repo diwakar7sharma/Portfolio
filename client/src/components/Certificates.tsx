@@ -5,20 +5,44 @@ const Certificates = () => {
     {
       id: 1,
       title: "Data Structures and Algorithms with CPP",
-      organization: "by Cipher Schools",
-      date: "Jul 2024"
+      organization: "by CipherSchools",
+      date: "Jul 2024",
+      link: "https://www.cipherschools.com/certificate/preview?id=669c2d4cf0df01503180dd66"
     },
     {
       id: 2,
       title: "Excel Skills for Business",
       organization: "by Macquarie University",
-      date: "Apr 2024"
+      date: "Apr 2024",
+      link: "https://www.coursera.org/account/accomplishments/specialization/certificate/F5CWXL4CVQJB"
     },
     {
       id: 3,
       title: "Become a Data Scientist",
       organization: "by LinkedIn",
-      date: "Feb 2024"
+      date: "Feb 2024",
+      link: "https://www.linkedin.com/learning/certificates/3a7e2a327249a1f1c3c459abbbf4c10532aecafdc64d9573d2b2460af4523584"
+    },
+    {
+      id: 4,
+      title: "Generative AI for Everyone",
+      organization: "by DeepLearning.AI",
+      date: "Dec 2023",
+      link: "https://coursera.org/verify/H29T6B488VRN"
+    },
+    {
+      id: 5,
+      title: "C++ Intermediate",
+      organization: "by SoloLearn",
+      date: "Nov 2023",
+      link: "https://www.sololearn.com/certificates/CC-ZDNOPNQH"
+    },
+    {
+      id: 6,
+      title: "Python Intermediate",
+      organization: "by SoloLearn",
+      date: "Oct 2023",
+      link: "https://www.sololearn.com/certificates/CC-XHNAVDSG"
     }
   ];
 
@@ -53,13 +77,16 @@ const Certificates = () => {
                 </div>
                 <p className="text-gray-600 text-sm mb-4">{certificate.organization}</p>
                 <div className="mt-auto pt-4 border-t border-gray-100">
-                  <button 
+                  <a 
+                    href={certificate.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-primary hover:text-primary/80 font-medium flex items-center gap-1 text-sm"
                     aria-label={`View certificate for ${certificate.title}`}
                   >
                     View Certificate
                     <FaExternalLinkAlt className="text-xs" />
-                  </button>
+                  </a>
                 </div>
               </div>
             ))}
