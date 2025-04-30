@@ -4,8 +4,37 @@ import profileImage from "../assets/Formal1.jpeg";
 
 const Hero = () => {
   return (
-    <section id="home" className="pt-24 pb-16 bg-tech-pattern text-white">
-      <div className="container mx-auto px-6 flex flex-col-reverse md:flex-row items-center">
+    <section id="home" className="pt-24 pb-16 bg-tech-pattern text-white relative">
+      {/* Data Science Background Elements */}
+      <div className="absolute inset-0 overflow-hidden opacity-15 pointer-events-none">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          {/* Data Points */}
+          <circle cx="10%" cy="20%" r="2" fill="#4CAF50" />
+          <circle cx="15%" cy="25%" r="2" fill="#2196F3" />
+          <circle cx="20%" cy="15%" r="2" fill="#9C27B0" />
+          <circle cx="25%" cy="30%" r="2" fill="#F44336" />
+          <circle cx="30%" cy="10%" r="2" fill="#FFEB3B" />
+          <circle cx="80%" cy="70%" r="2" fill="#4CAF50" />
+          <circle cx="85%" cy="75%" r="2" fill="#2196F3" />
+          <circle cx="90%" cy="65%" r="2" fill="#9C27B0" />
+          <circle cx="70%" cy="80%" r="2" fill="#F44336" />
+          <circle cx="75%" cy="60%" r="2" fill="#FFEB3B" />
+          
+          {/* Data Connection Lines */}
+          <line x1="10%" y1="20%" x2="25%" y2="30%" stroke="#FFFFFF" strokeWidth="0.5" />
+          <line x1="15%" y1="25%" x2="20%" y2="15%" stroke="#FFFFFF" strokeWidth="0.5" />
+          <line x1="30%" y1="10%" x2="20%" y2="15%" stroke="#FFFFFF" strokeWidth="0.5" />
+          <line x1="80%" y1="70%" x2="90%" y2="65%" stroke="#FFFFFF" strokeWidth="0.5" />
+          <line x1="85%" y1="75%" x2="75%" y2="60%" stroke="#FFFFFF" strokeWidth="0.5" />
+          <line x1="70%" y1="80%" x2="85%" y2="75%" stroke="#FFFFFF" strokeWidth="0.5" />
+          
+          {/* Graph Elements */}
+          <path d="M50,80 Q60,60 70,70 Q80,80 90,50" stroke="#3B82F6" strokeWidth="1" fill="none" />
+          <path d="M10,60 Q20,40 30,50 Q40,60 50,40" stroke="#10B981" strokeWidth="1" fill="none" />
+        </svg>
+      </div>
+      
+      <div className="container mx-auto px-6 flex flex-col-reverse md:flex-row items-center relative z-10">
         <div className="md:w-2/3 text-center md:text-left animate-fade-in-up">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
             Hi, I'm <span className="text-green-400">Diwakar Sharma</span>
