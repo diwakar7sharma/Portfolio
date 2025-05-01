@@ -4,6 +4,15 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
+      title: "Expense Tracker",
+      date: "Apr 2025",
+      description: "A comprehensive financial management application enabling users to track income, expenses, savings, investments, and tax calculations.",
+      techs: ["Swift", "Xcode", "iOS Development"],
+      image: "https://plus.unsplash.com/premium_photo-1661769416268-e7283169beba?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      github: "#"
+    },
+    {
+      id: 2,
       title: "Heart Disease Prediction",
       date: "Feb 2025",
       description: "A predictive model using Logistic Regression to assess heart disease risk with an interactive Flask interface.",
@@ -12,7 +21,7 @@ const Projects = () => {
       github: "https://github.com/diwakar7sharma/Heart-Disease-Prediction"
     },
     {
-      id: 2,
+      id: 3,
       title: "Binary Search Tree",
       date: "Jul 2024",
       description: "A C++ implementation of Binary Search Tree with optimized data structures and algorithms.",
@@ -21,7 +30,7 @@ const Projects = () => {
       github: "https://github.com/diwakar7sharma/BST"
     },
     {
-      id: 3,
+      id: 4,
       title: "Amazon Sales Dashboard",
       date: "May 2024",
       description: "An interactive sales dashboard using R with dynamic charts and filters for data-driven decision making.",
