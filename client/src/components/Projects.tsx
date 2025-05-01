@@ -1,6 +1,10 @@
-import { FaChevronRight, FaGithub } from "react-icons/fa";
+import { FaChevronRight, FaGithub, FaMobileAlt, FaArrowDown } from "react-icons/fa";
+import ExpenseTrackerGallery from "./ExpenseTrackerGallery";
+import { useState } from "react";
 
 const Projects = () => {
+  const [showExpenseTrackerGallery, setShowExpenseTrackerGallery] = useState(false);
+  
   const projects = [
     {
       id: 1,
@@ -9,7 +13,8 @@ const Projects = () => {
       description: "A comprehensive financial management application enabling users to track income, expenses, savings, investments, and tax calculations.",
       techs: ["Swift", "Xcode", "iOS Development"],
       image: "https://plus.unsplash.com/premium_photo-1661769416268-e7283169beba?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      github: "#"
+      github: "#",
+      hasGallery: true
     },
     {
       id: 2,
@@ -48,6 +53,21 @@ const Projects = () => {
           Projects
         </h2>
         
+        {showExpenseTrackerGallery && (
+          <div className="mb-12">
+            <h3 className="text-2xl font-bold mb-4 text-center">Expense Tracker App Screenshots</h3>
+            <ExpenseTrackerGallery />
+            <div className="text-center mt-4">
+              <button 
+                onClick={() => setShowExpenseTrackerGallery(false)}
+                className="px-4 py-2 bg-gray-200 rounded-lg text-gray-700 hover:bg-gray-300 transition-colors"
+              >
+                Hide Screenshots
+              </button>
+            </div>
+          </div>
+        )}
+        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {projects.map((project) => (
             <div 
@@ -64,6 +84,13 @@ const Projects = () => {
                 <div className="absolute bottom-4 left-4">
                   <span className="bg-primary text-white text-xs px-2 py-1 rounded">{project.date}</span>
                 </div>
+                {project.hasGallery && (
+                  <div className="absolute top-4 right-4">
+                    <span className="bg-black/70 text-white text-xs px-2 py-1 rounded flex items-center gap-1">
+                      <FaMobileAlt className="text-xs" /> App Screenshots
+                    </span>
+                  </div>
+                )}
               </div>
               
               <div className="p-6">
@@ -95,16 +122,27 @@ const Projects = () => {
                     <FaGithub className="text-lg" />
                     GitHub
                   </a>
-                  <a 
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary hover:text-primary/80 font-medium flex items-center gap-1 text-sm"
-                    aria-label={`View details for ${project.title}`}
-                  >
-                    View Project
-                    <FaChevronRight className="text-xs" />
-                  </a>
+                  
+                  {project.hasGallery ? (
+                    <button
+                      onClick={() => setShowExpenseTrackerGallery(true)}
+                      className="text-primary hover:text-primary/80 font-medium flex items-center gap-1 text-sm"
+                    >
+                      View Screenshots
+                      <FaArrowDown className="text-xs" />
+                    </button>
+                  ) : (
+                    <a 
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary hover:text-primary/80 font-medium flex items-center gap-1 text-sm"
+                      aria-label={`View details for ${project.title}`}
+                    >
+                      View Project
+                      <FaChevronRight className="text-xs" />
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
