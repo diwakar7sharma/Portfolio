@@ -8,7 +8,7 @@ const Projects = () => {
       date: "Apr 2025",
       description: "A comprehensive financial management application enabling users to track income, expenses, savings, investments, and tax calculations.",
       techs: ["Swift", "Xcode", "iOS Development"],
-      image: "https://i.imgur.com/4P6DjAI.png",
+      image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       github: "#"
     },
     {
