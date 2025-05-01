@@ -1,34 +1,7 @@
-import { useState } from "react";
-import { Document, Page, pdfjs } from "react-pdf";
-import { FaDownload, FaFilePdf, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaDownload, FaFilePdf, FaEye } from "react-icons/fa";
 import resumeFile from "../assets/Diwakar_Sharma_CV.pdf";
 
-// Initialize PDF.js worker
-pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
-
 const ResumeViewer = () => {
-  const [numPages, setNumPages] = useState<number | null>(null);
-  const [pageNumber, setPageNumber] = useState(1);
-  const [isLoading, setIsLoading] = useState(true);
-
-  function onDocumentLoadSuccess({ numPages }: { numPages: number }) {
-    setNumPages(numPages);
-    setPageNumber(1);
-    setIsLoading(false);
-  }
-
-  function changePage(offset: number) {
-    setPageNumber(prevPageNumber => prevPageNumber + offset);
-  }
-
-  function previousPage() {
-    changePage(-1);
-  }
-
-  function nextPage() {
-    changePage(1);
-  }
-
   return (
     <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-6">
@@ -68,9 +41,9 @@ const ResumeViewer = () => {
                   <div className="bg-gray-50 p-4 rounded-lg">
                     <h4 className="font-bold mb-2 text-gray-900">Key Skills</h4>
                     <ul className="list-disc pl-5 text-gray-700 space-y-1">
-                      <li>C++, Java, R, Python</li>
+                      <li>C++, Java, R, Python, Swift</li>
                       <li>HTML, CSS, Hadoop, Hive</li>
-                      <li>MySQL, Apache Spark, Tableau</li>
+                      <li>MySQL, Apache Spark, Tableau, Xcode</li>
                       <li>Active Listener, Team Player</li>
                     </ul>
                   </div>
@@ -94,59 +67,53 @@ const ResumeViewer = () => {
             <div className="p-6 border-t border-gray-200">
               <h3 className="text-xl font-bold mb-4 text-center">Resume Document</h3>
               
-              <div className="flex justify-center mb-4">
-                <Document
-                  file={resumeFile}
-                  onLoadSuccess={onDocumentLoadSuccess}
-                  loading={
-                    <div className="flex justify-center items-center h-96">
-                      <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-primary"></div>
-                    </div>
-                  }
-                  className="border border-gray-200 rounded-lg overflow-hidden"
-                >
-                  {!isLoading && (
-                    <Page 
-                      pageNumber={pageNumber} 
-                      width={Math.min(600, window.innerWidth - 40)}
-                      renderTextLayer={false}
-                      renderAnnotationLayer={false}
-                    />
-                  )}
-                </Document>
-              </div>
-              
-              {numPages && (
-                <div className="flex flex-col items-center">
-                  <div className="flex items-center gap-4">
-                    <button
-                      disabled={pageNumber <= 1}
-                      onClick={previousPage}
-                      className={`p-2 rounded-full ${pageNumber <= 1 ? 'bg-gray-200 text-gray-400' : 'bg-primary text-white hover:bg-primary/90'}`}
-                      aria-label="Previous page"
-                    >
-                      <FaChevronLeft />
-                    </button>
-                    
-                    <p className="text-gray-700">
-                      Page {pageNumber} of {numPages}
-                    </p>
-                    
-                    <button
-                      disabled={pageNumber >= numPages}
-                      onClick={nextPage}
-                      className={`p-2 rounded-full ${pageNumber >= numPages ? 'bg-gray-200 text-gray-400' : 'bg-primary text-white hover:bg-primary/90'}`}
-                      aria-label="Next page"
-                    >
-                      <FaChevronRight />
-                    </button>
+              <div className="flex flex-col items-center mb-6">
+                <div className="bg-gray-100 p-6 rounded-lg flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full max-w-lg">
+                  <div className="text-primary p-3 bg-white rounded-full">
+                    <FaFilePdf className="text-3xl" />
                   </div>
                   
-                  <p className="text-gray-500 text-sm mt-4">
-                    For the best experience, you can download the PDF using the button above.
-                  </p>
+                  <div>
+                    <h4 className="font-bold mb-1">View Complete Resume</h4>
+                    <p className="text-gray-600 mb-3">
+                      For a detailed view of my professional background:
+                    </p>
+                    
+                    <div className="flex flex-wrap gap-3">
+                      <a 
+                        href={resumeFile} 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg transition-colors flex items-center gap-2"
+                      >
+                        <FaEye /> View PDF
+                      </a>
+                      
+                      <a 
+                        href={resumeFile} 
+                        download="Diwakar_Sharma_CV.pdf"
+                        className="inline-block bg-gray-700 hover:bg-gray-800 text-white px-4 py-2 rounded-lg transition-colors flex items-center gap-2"
+                      >
+                        <FaDownload /> Download
+                      </a>
+                    </div>
+                  </div>
                 </div>
-              )}
+              </div>
+              
+              <div className="border border-gray-200 rounded-lg overflow-hidden h-[600px] max-w-4xl mx-auto">
+                <iframe
+                  src={resumeFile}
+                  title="Diwakar Sharma CV"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 'none' }}
+                />
+              </div>
+              
+              <p className="text-gray-500 text-sm mt-4 text-center">
+                For the best experience, you can download the PDF using the button above.
+              </p>
             </div>
           </div>
         </div>
