@@ -1,11 +1,38 @@
+import { SiCplusplus, SiPython, SiR } from "react-icons/si";
+import { 
+  FaJava, FaHtml5, FaCss3Alt, FaDatabase, 
+  FaTable, FaCode, FaServer, FaChartBar,
+  FaUserFriends, FaCheckDouble, FaSync, FaHeadphones
+} from "react-icons/fa";
+import { FiDatabase } from "react-icons/fi";
+
 const Skills = () => {
   const technicalSkills = {
-    languages: ["C++", "Java", "R", "Python"],
-    frameworks: ["HTML", "CSS", "Hadoop", "Hive"],
-    tools: ["MySQL", "Apache Spark", "Tableau"],
+    languages: [
+      { name: "C++", icon: SiCplusplus },
+      { name: "Java", icon: FaJava },
+      { name: "R", icon: SiR },
+      { name: "Python", icon: SiPython }
+    ],
+    frameworks: [
+      { name: "HTML", icon: FaHtml5 },
+      { name: "CSS", icon: FaCss3Alt },
+      { name: "Hadoop", icon: FaCode },
+      { name: "Hive", icon: FaServer }
+    ],
+    tools: [
+      { name: "MySQL", icon: FiDatabase },
+      { name: "Apache Spark", icon: FaCode },
+      { name: "Tableau", icon: FaChartBar }
+    ],
   };
   
-  const softSkills = ["Active Listener", "Team Player", "Attention to Detail", "Adaptability"];
+  const softSkills = [
+    { name: "Active Listener", icon: FaHeadphones },
+    { name: "Team Player", icon: FaUserFriends },
+    { name: "Attention to Detail", icon: FaCheckDouble },
+    { name: "Adaptability", icon: FaSync }
+  ];
 
   return (
     <section id="skills" className="py-16 bg-gray-50 section-transition">
@@ -25,9 +52,10 @@ const Skills = () => {
                 {technicalSkills.languages.map((skill, index) => (
                   <span 
                     key={index} 
-                    className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
+                    className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm flex items-center gap-1"
                   >
-                    {skill}
+                    <skill.icon className="text-primary" />
+                    {skill.name}
                   </span>
                 ))}
               </div>
@@ -39,9 +67,10 @@ const Skills = () => {
                 {technicalSkills.frameworks.map((skill, index) => (
                   <span 
                     key={index} 
-                    className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
+                    className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm flex items-center gap-1"
                   >
-                    {skill}
+                    <skill.icon className="text-primary" />
+                    {skill.name}
                   </span>
                 ))}
               </div>
@@ -53,9 +82,10 @@ const Skills = () => {
                 {technicalSkills.tools.map((skill, index) => (
                   <span 
                     key={index} 
-                    className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
+                    className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm flex items-center gap-1"
                   >
-                    {skill}
+                    <skill.icon className="text-primary" />
+                    {skill.name}
                   </span>
                 ))}
               </div>
@@ -67,9 +97,11 @@ const Skills = () => {
             
             <ul className="space-y-4">
               {softSkills.map((skill, index) => (
-                <li key={index} className="flex items-center">
-                  <span className="h-2 w-2 rounded-full bg-green-500 mr-2"></span>
-                  <span>{skill}</span>
+                <li key={index} className="flex items-center gap-3">
+                  <span className="text-green-500 flex items-center justify-center w-6 h-6 bg-green-50 rounded-full">
+                    <skill.icon className="w-3.5 h-3.5" />
+                  </span>
+                  <span>{skill.name}</span>
                 </li>
               ))}
             </ul>
