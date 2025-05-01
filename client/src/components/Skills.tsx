@@ -1,4 +1,4 @@
-import { SiCplusplus, SiPython, SiR } from "react-icons/si";
+import { SiCplusplus, SiPython, SiR, SiSwift, SiXcode } from "react-icons/si";
 import { 
   FaJava, FaHtml5, FaCss3Alt, FaDatabase, 
   FaTable, FaCode, FaServer, FaChartBar,
@@ -12,7 +12,8 @@ const Skills = () => {
       { name: "C++", icon: SiCplusplus },
       { name: "Java", icon: FaJava },
       { name: "R", icon: SiR },
-      { name: "Python", icon: SiPython }
+      { name: "Python", icon: SiPython },
+      { name: "Swift", icon: SiSwift }
     ],
     frameworks: [
       { name: "HTML", icon: FaHtml5 },
@@ -23,7 +24,8 @@ const Skills = () => {
     tools: [
       { name: "MySQL", icon: FiDatabase },
       { name: "Apache Spark", icon: FaCode },
-      { name: "Tableau", icon: FaChartBar }
+      { name: "Tableau", icon: FaChartBar },
+      { name: "Xcode", icon: SiXcode }
     ],
   };
   
