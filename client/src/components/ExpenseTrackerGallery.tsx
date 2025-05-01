@@ -5,27 +5,27 @@ import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 const screenshots = [
   {
     id: 1,
-    title: "Learn Financial Topics",
-    description: "Access educational content on budgeting, expense categorization, and saving strategies.",
-    imageUrl: "https://i.imgur.com/kYbI69e.png"
+    title: "Learning Center",
+    description: "Access educational content on budgeting basics, expense categorization, saving strategies, and financial tools.",
+    imageUrl: "https://i.imgur.com/fWR8F9T.png" // Learn screen
   },
   {
     id: 2,
-    title: "Track Your Finances",
-    description: "Add income, expenses, goals, investments, savings, and tax information all in one place.",
-    imageUrl: "https://i.imgur.com/LQhtULX.png"
+    title: "Expense Tracking",
+    description: "Add income, expenses, goals, investments, savings, and tax percentages to monitor your financial health.",
+    imageUrl: "https://i.imgur.com/bKlOfNh.png" // Track screen
   },
   {
     id: 3, 
     title: "Saving Strategies",
-    description: "Learn about effective saving methods and money management techniques from Bank of America.",
-    imageUrl: "https://i.imgur.com/4P6DjAI.png"
+    description: "Learn practical ways to save money for the future with expert advice from financial institutions.",
+    imageUrl: "https://i.imgur.com/b0sRTOp.png" // Savings article screen
   },
   {
     id: 4,
-    title: "User Profile Settings",
-    description: "Personalize your experience with profile settings, currency preferences, and account management.",
-    imageUrl: "https://i.imgur.com/s8x17sj.png"
+    title: "User Profile",
+    description: "Personalize your experience with profile settings, currency preferences, and account management options.",
+    imageUrl: "https://i.imgur.com/wL5cZ8k.png" // Profile screen
   }
 ];
 
