@@ -50,10 +50,10 @@ const Hero = () => {
               Contact Me
             </Link>
             <Link 
-              href="/projects" 
+              href="/resume" 
               className="bg-white hover:bg-gray-100 text-primary px-6 py-3 rounded-full font-medium transition-colors"
             >
-              View Projects
+              View Resume
             </Link>
           </div>
           <div className="flex mt-8 gap-4 justify-center md:justify-start">
