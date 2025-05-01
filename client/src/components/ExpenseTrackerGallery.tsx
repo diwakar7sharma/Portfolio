@@ -1,31 +1,31 @@
 import { useEffect, useState } from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
-// App screenshots - all images are externally hosted to optimize performance
+// App screenshots
 const screenshots = [
   {
     id: 1,
     title: "Learn Financial Topics",
-    description: "Access educational content on budgeting, expense categorization, and saving strategies.",
-    imageUrl: "https://i.imgur.com/kYbI69e.png"
+    description: "Access educational content on budgeting, saving, and investing strategies.",
+    imageUrl: "https://plus.unsplash.com/premium_photo-1661769416268-e7283169beba?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
     id: 2,
-    title: "Track Your Finances",
-    description: "Add income, expenses, goals, investments, savings, and tax information all in one place.",
-    imageUrl: "https://i.imgur.com/LQhtULX.png"
+    title: "Track Finances",
+    description: "Add income, expenses, goals, investments, savings, and tax information.",
+    imageUrl: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1011&q=80"
   },
   {
     id: 3, 
     title: "Saving Strategies",
-    description: "Learn about effective saving methods and money management techniques from Bank of America.",
-    imageUrl: "https://i.imgur.com/4P6DjAI.png"
+    description: "Learn about effective saving methods and money management techniques.",
+    imageUrl: "https://images.unsplash.com/photo-1579014134953-1580d7f123f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80"
   },
   {
     id: 4,
-    title: "User Profile Settings",
-    description: "Personalize your experience with profile settings, currency preferences, and account management.",
-    imageUrl: "https://i.imgur.com/s8x17sj.png"
+    title: "User Profile",
+    description: "Personalize your experience with profile settings and currency preferences.",
+    imageUrl: "https://images.unsplash.com/photo-1555421689-491a97ff2040?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
   }
 ];
 
@@ -68,28 +68,15 @@ export default function ExpenseTrackerGallery() {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="relative bg-slate-100 rounded-t-lg border-slate-200 border overflow-hidden">
-        <div className="w-full md:max-w-[375px] mx-auto relative pt-4 pb-8 bg-black">
-          {/* iPhone mockup */}
-          <div className="absolute top-0 left-0 right-0 h-8 bg-black flex items-center justify-center">
-            <div className="w-32 h-6 bg-black rounded-b-lg"></div>
-          </div>
-          
-          <div className="w-full h-full px-2 md:px-4">
-            <img 
-              src={screenshots[currentIndex].imageUrl} 
-              alt={screenshots[currentIndex].title}
-              className="w-full h-[500px] object-contain rounded-lg transition-transform duration-500 ease-in-out mx-auto"
-            />
-          </div>
-          
-          <div className="absolute bottom-2 left-0 right-0 flex justify-center">
-            <div className="w-1/3 h-1 bg-slate-300 rounded-full"></div>
-          </div>
-        </div>
+      <div className="aspect-w-16 aspect-h-9 relative">
+        <img 
+          src={screenshots[currentIndex].imageUrl} 
+          alt={screenshots[currentIndex].title}
+          className="w-full h-[300px] object-cover transition-transform duration-500 ease-in-out"
+        />
         
         {/* Caption */}
-        <div className="bg-gradient-to-t from-primary/90 to-primary/70 p-6 text-white">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6 text-white">
           <h3 className="text-xl md:text-2xl font-bold mb-2">
             {screenshots[currentIndex].title}
           </h3>
@@ -100,17 +87,17 @@ export default function ExpenseTrackerGallery() {
       </div>
       
       {/* Controls */}
-      <div className="absolute top-1/2 -translate-y-1/2 left-0 right-0 flex items-center justify-between px-2 md:px-8 z-10 pointer-events-none">
+      <div className="absolute inset-0 flex items-center justify-between p-4">
         <button 
           onClick={goToPrevious}
-          className="p-2 rounded-full bg-black/60 text-white hover:bg-black/80 transition-colors shadow-md pointer-events-auto"
+          className="p-2 rounded-full bg-black/30 text-white hover:bg-black/50 transition-colors"
           aria-label="Previous slide"
         >
           <FaArrowLeft />
         </button>
         <button 
           onClick={goToNext}
-          className="p-2 rounded-full bg-black/60 text-white hover:bg-black/80 transition-colors shadow-md pointer-events-auto"
+          className="p-2 rounded-full bg-black/30 text-white hover:bg-black/50 transition-colors"
           aria-label="Next slide"
         >
           <FaArrowRight />
@@ -118,13 +105,13 @@ export default function ExpenseTrackerGallery() {
       </div>
       
       {/* Indicators */}
-      <div className="flex justify-center gap-2 mt-4 mb-2">
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
         {screenshots.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`h-2.5 rounded-full transition-all ${
-              index === currentIndex ? "bg-primary w-6" : "bg-gray-300 w-2.5"
+            className={`w-2 h-2 rounded-full transition-all ${
+              index === currentIndex ? "bg-white w-4" : "bg-white/50"
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />
