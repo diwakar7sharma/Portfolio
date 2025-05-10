@@ -10,10 +10,10 @@ const Skills = () => {
   const technicalSkills = {
     languages: [
       { name: "C++", icon: SiCplusplus },
+      { name: "Swift", icon: SiSwift },
       { name: "Java", icon: FaJava },
       { name: "R", icon: SiR },
-      { name: "Python", icon: SiPython },
-      { name: "Swift", icon: SiSwift }
+      { name: "Python", icon: SiPython }
     ],
     frameworks: [
       { name: "HTML", icon: FaHtml5 },
@@ -22,10 +22,10 @@ const Skills = () => {
       { name: "Hive", icon: FaServer }
     ],
     tools: [
+      { name: "Xcode", icon: SiXcode },
       { name: "MySQL", icon: FiDatabase },
       { name: "Apache Spark", icon: FaCode },
-      { name: "Tableau", icon: FaChartBar },
-      { name: "Xcode", icon: SiXcode }
+      { name: "Tableau", icon: FaChartBar }
     ],
   };
   

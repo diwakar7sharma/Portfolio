@@ -4,10 +4,10 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Expense Tracker",
+      title: "Expense Tracker Application",
       date: "Apr 2025",
-      description: "A comprehensive financial management application enabling users to track income, expenses, savings, investments, and tax calculations.",
-      techs: ["Swift", "Xcode", "iOS Development"],
+      description: "An iOS-based app using Swift and UIKit for tracking finances with dynamic views, video-based learning via AVPlayer, and multi-currency support through UIAlertController.",
+      techs: ["Swift", "Xcode", "UIKit", "AVPlayer", "WebKit"],
       image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       github: "#"
     },

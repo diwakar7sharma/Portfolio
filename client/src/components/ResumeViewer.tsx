@@ -41,10 +41,10 @@ const ResumeViewer = () => {
                   <div className="bg-gray-50 p-4 rounded-lg">
                     <h4 className="font-bold mb-2 text-gray-900">Key Skills</h4>
                     <ul className="list-disc pl-5 text-gray-700 space-y-1">
-                      <li>C++, Java, R, Python, Swift</li>
+                      <li>C++, Swift, Java, R, Python</li>
                       <li>HTML, CSS, Hadoop, Hive</li>
-                      <li>MySQL, Apache Spark, Tableau, Xcode</li>
-                      <li>Active Listener, Team Player</li>
+                      <li>Xcode, MySQL, Apache Spark, Tableau</li>
+                      <li>Active Listener, Team Player, Attention to Detail, Adaptability</li>
                     </ul>
                   </div>
                   
